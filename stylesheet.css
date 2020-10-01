@@ -6,3 +6,15 @@ body {
 span {
     word-spacing: 20 px;
 }
+a:link {
+    color: white;
+}
+a:visited {
+    color: white;
+}
+a:hover {
+    color: gray;
+}
+a:active {
+    color: white;
+}
