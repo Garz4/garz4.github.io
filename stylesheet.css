@@ -7,14 +7,14 @@ span {
     word-spacing: 20 px;
 }
 a:link {
-    color: white;
+    color: black;
 }
 a:visited {
-    color: white;
+    color: black;
 }
 a:hover {
-    color: gray;
+    color: darkgray;
 }
 a:active {
-    color: white;
+    color: black;
 }
