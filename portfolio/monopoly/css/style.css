@@ -1,0 +1,57 @@
+.titulo {
+	color: white;
+	text-shadow: 0px 0px 3px #000000;
+}
+
+.subtitulo {
+	color: gray;
+}
+
+.start-online{
+	background-color:#08ab01;
+	color:#FFFFFF;
+}
+
+.start-offline{
+	background-color:#00c4b3;
+	color:#FFFFFF;
+}
+
+.comando{
+	background-color:#000000;
+	color:#FFFFFF;
+}
+
+.disabled {
+	background-color:#000000;
+	color:#565656;
+}
+
+.tablero {
+	background-image: url("../imgs/tablero.jpg");
+	background-repeat: no-repeat;
+	background-size: 650px 650px;
+}
+
+.monopolymoney {
+	-webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    height:20px;
+    width:25px;
+}
+
+.inline-block{
+    display:-moz-inline-stack;
+    display:inline-block;
+    zoom:1;
+    *display:inline;
+}
+
+button{
+	border:0;
+	padding:10px;
+	border-radius:10px;
+}

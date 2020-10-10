@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>MONOPOLY</title>
+		<link rel="stylesheet" href="css/style.css"/>
+	</head>
+
+	<body style="font-family:Arial;">
+		<center>
+			<h1 class="titulo">MONOPOLY</h1>
+			<h5 class="subtitulo">Cl&aacute;sico juego de mesa adaptado al entorno web.</h5>
+			<input type="text" placeholder="Introduce tu nick" id="nick"/>
+			<button class="start-online" onclick="online()">Jugar local</button><br/><br/>
+			<div class="state" id="game-state"></div><br/>
+			<table>
+				<tr>
+					<td>
+						<center>
+							<img src="imgs/jugador0.png" width="50" />
+							<p id="player1-name">JUGADOR 1</p>
+							<p id="player1-money">DINERO: 0 <span class="monopolymoney inline-block">&#8361;</span></p>
+							<input type="button" class="comando" id="tirardados0" onclick="tirarDados()" value="Tirar dados" /><br />
+							<input type="button" class="comando" id="comprarpropiedad0" onclick="comprarPropiedad()" value="Comprar propiedad" /><br />
+							<input type="button" class="comando" id="pasar0" onclick="pasar()" value="Pasar" /><br />
+							<hr />
+							<div id="imgcolocar0"></div><div id="propiedadescolocar0"></div><br />
+							<p id="noCasas0-colocar"></p><br />
+							<input type="button" class="comando" id="colocarcasa0" onclick="colocarCasa(0)" value="Colocar casa" /><br />
+							<input type="button" class="comando" id="colocarhotel0" onclick="colocarCasa(0)" value="Colocar hotel" /><br />
+							<hr />
+							<div id="imgvender0"></div><div id="propiedadesvender0"></div><br />
+							<p id="noCasas0-vender"></p><br />
+							<input type="button" class="comando" id="vendercasa0" onclick="venderCasa(0)" value="Vender casa" /><br />
+							<input type="button" class="comando" id="venderhotel0" onclick="venderHotel(0)" value="Vender hotel" /><br />
+							<hr />
+							<div id="imgvender-p0"></div><div id="propiedadvender0"></div><br />
+							<p id="noCasas0-vender-p"></p><br />
+							<input type="button" class="comando" id="venderpropiedad0" onclick="venderPropiedad(0)" value="Vender propiedad" /><br />
+							<hr />
+							<input type="button" class="comando" id="salircarcel0" onclick="salirDeLaCarcel(0)" value="Salir de la cárcel" /><br />
+						</center>
+					</td>
+					<td class="tablero"><canvas id="game" width="650" height="650"></canvas></td>
+					<td>
+						<center>
+							<img src="imgs/jugador1.png" width="50" />
+							<p id="player2-name">JUGADOR 2</p>
+							<p id="player2-money">DINERO: 0 <span class="monopolymoney inline-block">&#8361;</span></p>
+							<input type="button" class="comando" id="tirardados1" onclick="tirarDados()" value="Tirar dados" /><br />
+							<input type="button" class="comando" id="comprarpropiedad1" onclick="comprarPropiedad()" value="Comprar propiedad" /><br />
+							<input type="button" class="comando" id="pasar1" onclick="pasar()" value="Pasar" /><br />
+							<hr />
+							<div id="imgcolocar1"></div><div id="propiedadescolocar1"></div><br />
+							<p id="noCasas1-colocar"></p><br />
+							<input type="button" class="comando" id="colocarcasa1" onclick="colocarCasa(1)" value="Colocar casa" /><br />
+							<input type="button" class="comando" id="colocarhotel1" onclick="colocarCasa(1)" value="Colocar hotel" /><br />
+							<hr />
+							<div id="imgvender1"></div><div id="propiedadesvender1"></div><br />
+							<p id="noCasas1-vender"></p><br />
+							<input type="button" class="comando" id="vendercasa1" onclick="venderCasa(1)" value="Vender casa" /><br />
+							<input type="button" class="comando" id="venderhotel1" onclick="venderHotel(1)" value="Vender hotel" /><br />
+							<hr />
+							<div id="imgvender-p1"></div><div id="propiedadvender1"></div><br />
+							<p id="noCasas1-vender-p"></p><br />
+							<input type="button" class="comando" id="venderpropiedad1" onclick="venderPropiedad(1)" value="Vender propiedad" /><br />
+							<hr />
+							<input type="button" class="comando" id="salircarcel1" onclick="salirDeLaCarcel(1)" value="Salir de la cárcel" /><br />
+						</center>
+					</td>
+				</tr>
+			</table>
+			<h5>ALUMNO:<br/>
+				<ul>
+					<li>Uriel Garc&iacute;a Rivas</li>
+				</ul>
+			</h5>
+		</center>
+	</body>
+	<script src="javascript/main.js" type="text/javascript"></script>
+	<script src="javascript/game.js" type="text/javascript"></script>
+</html>
