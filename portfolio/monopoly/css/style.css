@@ -18,12 +18,10 @@
 }
 
 .comando{
-	background-color:#000000;
-	color:#FFFFFF;
+	color:black;
 }
 
 .disabled {
-	background-color:#000000;
 	color:#565656;
 }
 

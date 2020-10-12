@@ -8,17 +8,22 @@
 
 	<body style="font-family:Arial;">
 		<center>
+            <span>
+                <a href="/portfolio">Go back...</a>
+			</span>
+			<br/>
 			<h1 class="titulo">MONOPOLY</h1>
 			<h5 class="subtitulo">Cl&aacute;sico juego de mesa adaptado al entorno web.</h5>
-			<input type="text" placeholder="Introduce tu nick" id="nick"/>
-			<button class="start-online" onclick="online()">Jugar local</button><br/><br/>
+			<button class="start-offline" onclick="online()">Jugar local</button>
+			<button class="start-online" onclick="online()">Jugar online</button><br/><br/>
 			<div class="state" id="game-state"></div><br/>
 			<table>
 				<tr>
 					<td>
 						<center>
-							<img src="imgs/jugador0.png" width="50" />
-							<p id="player1-name">JUGADOR 1</p>
+							<img src="imgs/jugador0.png" width="50" /><br>
+							<input type="text" placeholder="Jugador 1: Introduce tu nick" id="nick"/>
+							<input type="hidden"/><p id="player1-name">JUGADOR 1</p>
 							<p id="player1-money">DINERO: 0 <span class="monopolymoney inline-block">&#8361;</span></p>
 							<input type="button" class="comando" id="tirardados0" onclick="tirarDados()" value="Tirar dados" /><br />
 							<input type="button" class="comando" id="comprarpropiedad0" onclick="comprarPropiedad()" value="Comprar propiedad" /><br />
@@ -70,11 +75,6 @@
 					</td>
 				</tr>
 			</table>
-			<h5>ALUMNO:<br/>
-				<ul>
-					<li>Uriel Garc&iacute;a Rivas</li>
-				</ul>
-			</h5>
 		</center>
 	</body>
 	<script src="javascript/main.js" type="text/javascript"></script>
