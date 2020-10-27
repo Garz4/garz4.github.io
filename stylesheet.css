@@ -37,3 +37,9 @@ a:link, a:visited, a:active {
 a:hover {
     color: darkgray;
 }
+.br10 {
+    border-radius:10px;
+}
+.sh5 {
+    box-shadow:0px 0px 10px 5px lightgray;
+}
