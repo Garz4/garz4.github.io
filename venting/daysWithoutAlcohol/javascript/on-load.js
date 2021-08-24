@@ -78,17 +78,17 @@ for (let i = 0, k = 0; i <= 52; ++i) {
                     toBubble = 'Wasted';
                     bubble.style.left = (thisLeft-30) + 'px';
                 } else {
-                    toBubble = curr-1 + ' can';
+                    toBubble = curr - 1 + ' can';
 
-                    if (curr-1 != 1) {
+                    if (curr - 1 != 1) {
                         toBubble += 's';
                     }
 
                     toBubble += ' of beer';
-                    bubble.style.left = (thisLeft-60) + 'px';
+                    bubble.style.left = (thisLeft - 60) + 'px';
                 }
 
-                bubble.style.top = (thisTop-40) + 'px';
+                bubble.style.top = (thisTop - 40) + 'px';
                 bubble.innerHTML = '<strong>' + toBubble + '</strong>';
                 bubble.removeAttribute('hidden');
             }, false);
