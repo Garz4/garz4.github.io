@@ -1,5 +1,8 @@
 const futureDate = 'Sat, 01 Jan 2022 12:00:00 UTC';
-const months = {0:'Jan', 1:'Feb', 2:'Mar', 3:'Apr', 4:'May', 5:'Jun', 6:'Jul', 7:'Aug', 8:'Sep', 9:'Oct', 10:'Nov', 11:'Dic'};
+const months = {
+    0:'Jan', 1:'Feb', 2:'Mar', 3:'Apr', 4:'May', 5:'Jun', 6:'Jul',
+    7:'Aug', 8:'Sep', 9:'Oct', 10:'Nov', 11:'Dic'
+};
 const username = document.getElementById('username');
 const usernameInput = document.getElementById('username-input');
 const themeInput = document.getElementById('theme-switch');
@@ -32,13 +35,9 @@ if (!soberDays.length) {
 if (!themeMode.length) {
     setCookie('themeMode', 'lightMode', futureDate);
     updateThemeToLight();
-}
-
-else if (themeMode === 'lightMode') {
+} else if (themeMode === 'lightMode') {
     updateThemeToLight();
-}
-
-else {
+} else {
     updateThemeToDark();
 }
 
@@ -48,9 +47,7 @@ startDate = startDate[2] + ' ' + months[startDate[1]] + ' ' + startDate[0];
 if (currDay >= soberDays.length - 364) {
     soberDays = soberDays + '0';
     setCookie('soberDays', soberDays, futureDate);
-}
-
-else if (soberDays.length == 371 && currDay == 0) {
+} else if (soberDays.length == 371 && currDay == 0) {
     soberDays = soberDays.substr(7) + '0';
     setCookie('soberDays', soberDays, futureDate);
 }
@@ -68,14 +65,10 @@ for (let i = 0, k = 0; i <= 52; ++i) {
 
         if (soberDays[k] == '0') {
             dayRect.setAttribute('fill', upcomingDayColor);
-        }
-
-        else if (soberDays[k] == '1') { 
+        } else if (soberDays[k] == '1') { 
             totalSoberDays++;
             dayRect.setAttribute('fill', soberColor);
-        }
-
-        else {
+        } else {
             dayRect.addEventListener('mouseover', function(event) {
                 let toBubble = '';
                 let thisLeft = event.target.getBoundingClientRect().left;
@@ -84,11 +77,13 @@ for (let i = 0, k = 0; i <= 52; ++i) {
                 if (curr == '9') {
                     toBubble = 'Wasted';
                     bubble.style.left = (thisLeft-30) + 'px';
-                }
-
-                else {
+                } else {
                     toBubble = curr-1 + ' can';
-                    if (curr-1 != 1) toBubble += 's';
+
+                    if (curr-1 != 1) {
+                        toBubble += 's';
+                    }
+
                     toBubble += ' of beer';
                     bubble.style.left = (thisLeft-60) + 'px';
                 }
@@ -106,23 +101,21 @@ for (let i = 0, k = 0; i <= 52; ++i) {
 
             if (soberDays[k] == '2' || soberDays[k] == '3') {
                 dayRect.setAttribute('fill', lowDrunkColor);
-            }
-
-            else if (soberDays[k] == '4' || soberDays[k] == '5') {
+            } else if (soberDays[k] == '4' || soberDays[k] == '5') {
                 dayRect.setAttribute('fill', midDrunkColor);
-            }
-
-            else if (soberDays[k] == '6' || soberDays[k] == '7') {
+            } else if (soberDays[k] == '6' || soberDays[k] == '7') {
                 dayRect.setAttribute('fill', highDrunkColor);
-            }
-
-            else if (soberDays[k] == '8' || soberDays[k] == '9') {
+            } else if (soberDays[k] == '8' || soberDays[k] == '9') {
                 dayRect.setAttribute('fill', wastedColor);
+            } else {
+                dayRect.setAttribute('fill', 'black');
             }
         }
         
         k++;
-        if (totalSoberDays > 0) totalDays++;
+        if (totalSoberDays > 0) {
+            totalDays++;
+        }
 
         let newDayVector = document.createElementNS(svgNS, 'svg');
         newDayVector.setAttribute('width', dayVectorSize);
@@ -133,14 +126,15 @@ for (let i = 0, k = 0; i <= 52; ++i) {
         newDayContainer.appendChild(newDayVector);
         newWeekContainer.appendChild(newDayContainer);
     }
+
     calendar.appendChild(newWeekContainer);
 }
 
 if (totalSoberDays == 0) {
     title.innerHTML = 'Not started yet.';
-}
-else {
-    title.innerHTML = 'Started on ' + startDate + ', ' + totalSoberDays + ' total sober days out of ' + totalDays + ' days.';
+} else {
+    title.innerHTML = 'Started on ' + startDate + ', ' + totalSoberDays +
+        ' total sober days out of ' + totalDays + ' days.';
 }
 
 curr = getCookie('username');

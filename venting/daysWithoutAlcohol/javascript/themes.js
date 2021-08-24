@@ -22,9 +22,7 @@ function updateTheme() {
     if (themeInput.checked) {
         updateThemeToDark();
         setCookie('themeMode', 'darkMode', futureDate);
-    }
-
-    else {
+    } else {
         updateThemeToLight();
         setCookie('themeMode', 'lightMode', futureDate);
     }

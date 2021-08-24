@@ -18,9 +18,7 @@ function incrementDrunkDays() {
 
     if (quantity[0] === 'D') {
         quantity = '9';
-    }
-
-    else {
+    } else {
         quantity++;
     }
 
