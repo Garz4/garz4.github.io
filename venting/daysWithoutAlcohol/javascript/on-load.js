@@ -76,8 +76,8 @@ for (let i = 0, k = 0; i <= 52; ++i) {
 
                 if (curr == '9') {
                     toBubble = 'Wasted';
-                    bubble.style.left = (thisLeft-30) + 'px';
-                } else {
+                    bubble.style.left = (thisLeft - 30) + 'px';
+                } else if (curr >= '0' && curr < '9') {
                     toBubble = curr - 1 + ' can';
 
                     if (curr - 1 != 1) {
@@ -86,6 +86,9 @@ for (let i = 0, k = 0; i <= 52; ++i) {
 
                     toBubble += ' of beer';
                     bubble.style.left = (thisLeft - 60) + 'px';
+                } else {
+                    toBubble = 'Beyond wasted';
+                    bubble.style.left = (thisLeft - 50) + 'px';
                 }
 
                 bubble.style.top = (thisTop - 40) + 'px';
