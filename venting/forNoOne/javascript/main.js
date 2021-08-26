@@ -9,7 +9,7 @@ const profilePic = document.getElementById('profilePic');
 const imgUpload = document.getElementById('imgUpload');
 
 input.addEventListener('keyup', function(event) {
-  if(event.key === 'Enter' && input.value.length) {
+  if (event.key === 'Enter' && input.value.length) {
     sendMsg();
   }
 });
@@ -19,7 +19,7 @@ imgUpload.onchange = function (evt) {
     files = tgt.files;
 
   // FileReader support
-  if(FileReader && files && files.length) {
+  if (FileReader && files && files.length) {
     let fr = new FileReader();
     fr.onload = function () {
       profilePic.src = fr.result;
@@ -40,7 +40,7 @@ noOneNameText.addEventListener('click', function(event) {
   noOneNameText.style.display = 'none';
   noOneNameInputWrapper.style.display = 'inline';
   noOneNameInput.addEventListener('keyup', function(event) {
-    if(event.key === 'Enter' && noOneNameInput.value.length) {
+    if (event.key === 'Enter' && noOneNameInput.value.length) {
       setName();
       noOneNameText.style.display = 'inline';
       noOneNameInputWrapper.style.display = 'none';
@@ -67,7 +67,7 @@ function sendMsg() {
 }
 
 function setName() {
-  if(noOneNameInput.value.length != 0) {
+  if (noOneNameInput.value.length != 0) {
     noOneName = noOneNameInput.value;
   }
 
