@@ -27,7 +27,7 @@ function incrementDrunkDays() {
     soberDays.substr(0,soberDays.length-1) + quantity,
     futureDate
   );
-  
+
   refresh();
 }
 
