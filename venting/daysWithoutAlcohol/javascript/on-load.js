@@ -25,7 +25,7 @@ var upcomingDayColor;
 var totalSoberDays = 0;
 var totalDays = 0;
 var soberDays = getCookie('soberDays');
-var startDate;
+var startDate = getCookie('startDate');
 var curr;
 
 if (!soberDays.length) {
@@ -41,8 +41,10 @@ if (!themeMode.length) {
     updateThemeToDark();
 }
 
-startDate = getCookie('startDate').split('-');
-startDate = startDate[2] + ' ' + months[startDate[1]] + ' ' + startDate[0];
+if (startDate.length) {
+    startDate = startDate.split('-');
+    startDate = startDate[2] + ' ' + months[startDate[1]] + ' ' + startDate[0];
+}
 
 if (currDay >= soberDays.length - 364) {
     soberDays = soberDays + '0';
