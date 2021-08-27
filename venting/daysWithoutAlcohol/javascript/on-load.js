@@ -43,7 +43,9 @@ if (!themeMode.length) {
 
 if (startDate.length) {
   startDate = startDate.split('-');
-  startDate = startDate[2] + ' ' + months[startDate[1]] + ' ' + startDate[0];
+  if (startDate.length == 3) {
+    startDate = startDate[2] + ' ' + months[startDate[1]] + ' ' + startDate[0];
+  }
 }
 
 if (currDay >= soberDays.length - 364) {
