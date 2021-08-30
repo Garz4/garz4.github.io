@@ -24,7 +24,7 @@ function incrementDrunkDays() {
 
   setCookie(
     'soberDays',
-    soberDays.substr(0,soberDays.length-1) + quantity,
+    soberDays.substr(0, soberDays.length - 1) + quantity,
     futureDate
   );
 
