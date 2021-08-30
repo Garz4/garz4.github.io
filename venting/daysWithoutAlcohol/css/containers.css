@@ -80,11 +80,26 @@
   color: white;
 }
 
+.btn-hangover {
+  text-align: center !important;
+  background-color: var(--btn-hangover-bg, #fafbfc);
+  border-color:  var(--btn-hangover-bc, #d9dadc);
+  color: #49b2f8;
+}
+
+.btn-hangover:hover {
+  background-color: #49b2f8;
+  border-color: #49b2f8;
+  color: white;
+}
+
 .theme-switch:checked + main {
   --text: #c9d1d9;
   --bg: #0d1117;
   --btn-drunk-bg: #21262d;
   --btn-drunk-bc: #30363d;
+  --btn-hangover-bg: #21262d;
+  --btn-hangover-bc: #30363d;
   }  
 
 .bubble {

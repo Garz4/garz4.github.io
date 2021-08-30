@@ -5,6 +5,7 @@ function updateThemeToDark() {
   highDrunkColor = '#a62626';
   wastedColor = '#f85149';
   upcomingDayColor = '#161b22';
+  hangoverColor = '#49b2f8';
   themeInput.checked = true;
 }
 
@@ -15,6 +16,7 @@ function updateThemeToLight() {
   highDrunkColor = '#a13030';
   wastedColor = '#6e2121';
   upcomingDayColor = '#ebedf0';
+  hangoverColor = '#49b2f8';
   themeInput.checked = false;
 }
 

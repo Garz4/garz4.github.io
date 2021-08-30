@@ -17,6 +17,7 @@ const currDate = new Date();
 const currDay = currDate.getDay();
 const themeMode = getCookie('themeMode');
 var soberColor;
+var hangoverColor;
 var lowDrunkColor;
 var midDrunkColor;
 var highDrunkColor;
@@ -90,6 +91,9 @@ for (let i = 0, k = 0; i <= 52; ++i) {
 
           toBubble += ' of beer';
           bubble.style.left = (thisLeft - 60) + 'px';
+        } else if (curr == 'h') {
+          toBubble = 'Hangover';
+          bubble.style.left = (thisLeft - 50) + 'px';
         } else {
           toBubble = 'Beyond wasted';
           bubble.style.left = (thisLeft - 50) + 'px';
@@ -114,6 +118,8 @@ for (let i = 0, k = 0; i <= 52; ++i) {
         dayRect.setAttribute('fill', highDrunkColor);
       } else if (soberDays[k] == '8' || soberDays[k] == '9') {
         dayRect.setAttribute('fill', wastedColor);
+      } else if (soberDays[k] == 'h') {
+        dayRect.setAttribute('fill', hangoverColor);
       } else {
         dayRect.setAttribute('fill', 'black');
       }

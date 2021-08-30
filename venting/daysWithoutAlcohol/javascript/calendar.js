@@ -49,3 +49,13 @@ function incrementSoberDays() {
 
   refresh();
 }
+
+function incrementHangoverDays() {
+  setCookie(
+    'soberDays',
+    soberDays.substr(0, soberDays.length - 1) + 'h',
+    futureDate
+  );
+
+  refresh();
+}
