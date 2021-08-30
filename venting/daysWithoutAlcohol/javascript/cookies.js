@@ -1,9 +1,9 @@
 /**
  * Cookies so far:
- * description - 
- * soberDays - 
- * startDate - 
- * username - 
+ *   - description
+ *   - soberDays
+ *   - startDate
+ *   - username
  */
 
 function getCookie(cname) {
