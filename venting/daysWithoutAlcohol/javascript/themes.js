@@ -9,7 +9,7 @@ function updateThemeToDark() {
 }
 
 function updateThemeToLight() {
-  soberColor = '#9be9a8'; // Green
+  soberColor = '#40c463'; // Green
   lowDrunkColor = '#e99b9b';
   midDrunkColor = '#c44040';
   highDrunkColor = '#a13030';
