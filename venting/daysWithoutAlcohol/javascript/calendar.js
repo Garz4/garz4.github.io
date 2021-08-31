@@ -13,7 +13,7 @@ function getNewCalendar() {
   return response;
 }
 
-function incrementDrunkDays() {
+function todayDrunk() {
   let quantity = document.getElementById('quantity').value;
 
   if (quantity[0] === 'D') {
@@ -31,7 +31,7 @@ function incrementDrunkDays() {
   refresh();
 }
 
-function incrementSoberDays() {
+function todaySober() {
   if (totalSoberDays == 0) {
     setCookie(
       'startDate',
@@ -50,7 +50,7 @@ function incrementSoberDays() {
   refresh();
 }
 
-function incrementHangoverDays() {
+function todayHangover() {
   setCookie(
     'soberDays',
     soberDays.substr(0, soberDays.length - 1) + 'h',
