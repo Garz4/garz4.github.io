@@ -26,6 +26,8 @@ var upcomingDayColor;
 var totalSoberDays = 0;
 var totalDays = 0;
 var soberDays = getCookie('soberDays');
+var soberDaysThisMonth = 0;
+var thisMany = 0;
 var startDate = getCookie('startDate');
 var curr;
 
@@ -62,6 +64,7 @@ for (let i = 0, k = 0; i <= 52; ++i) {
   newWeekContainer.setAttribute('class', 'week');
 
   for (let j = 0; j < 7 && k < soberDays.length; ++j) {
+    thisMany++;
     let curr = soberDays[k];
     let dayRect = document.createElementNS(svgNS, 'rect');
     dayRect.setAttribute('width', dayVectorSize);
@@ -73,6 +76,10 @@ for (let i = 0, k = 0; i <= 52; ++i) {
     } else if (soberDays[k] == '1') { 
       totalSoberDays++;
       dayRect.setAttribute('fill', soberColor);
+
+      if (thisMany > soberDays.length - currDate.getDate()) {
+        soberDaysThisMonth++;
+      }
     } else {
       dayRect.addEventListener('mouseover', function(event) {
         let toBubble = '';
@@ -120,6 +127,10 @@ for (let i = 0, k = 0; i <= 52; ++i) {
         dayRect.setAttribute('fill', wastedColor);
       } else if (soberDays[k] == 'h') {
         dayRect.setAttribute('fill', hangoverColor);
+
+        if (thisMany > soberDays.length - currDate.getDate()) {
+          soberDaysThisMonth++;
+        }
       } else {
         dayRect.setAttribute('fill', 'black');
       }
@@ -147,7 +158,8 @@ if (totalSoberDays == 0) {
   title.innerHTML = 'Not started yet.';
 } else {
   title.innerHTML = 'Started on ' + startDate + ', ' + totalSoberDays +
-    ' total sober days out of ' + totalDays + ' days.';
+    ' total sober days out of ' + totalDays + ' days. ' + soberDaysThisMonth +
+    ' out of ' + currDate.getDate() + ' this month.';
 }
 
 curr = getCookie('username');
