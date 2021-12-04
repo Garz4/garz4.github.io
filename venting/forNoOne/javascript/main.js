@@ -1,5 +1,5 @@
 const noOne = new NoOne();
-var noOneName = "No One";
+var noOneName = noOne.getRandomName();
 const noOneNameText = document.getElementById('noOneNameText');
 const noOneNameInput = document.getElementById('noOneNameInput');
 const noOneNameInputWrapper = document.getElementById('noOneNameInputWrapper');
@@ -9,7 +9,7 @@ const pic = document.getElementById('pic');
 const profilePic = document.getElementById('profilePic');
 const imgUpload = document.getElementById('imgUpload');
 
-noOneNameText.innerHTML = noOne.getRandomName();
+noOneNameText.innerHTML = noOneName;
 
 input.addEventListener('keyup', function(event) {
   if (event.key === 'Enter' && input.value.length) {
