@@ -157,7 +157,7 @@ function addNoOne() {
   newNameText.addEventListener('click', function(event) {
     newNameText.style.display = 'none';
     newNameInputWrapper.style.display = 'inline';
-    newNameInput.value = newNoOneName;
+    newNameInput.value = newNameText.innerHTML;
 
     newNameInput.addEventListener('keyup', function(event) {
       if (event.key === 'Enter' && newNameInput.value.length) {
