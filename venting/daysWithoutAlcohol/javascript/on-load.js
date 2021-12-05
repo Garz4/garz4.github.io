@@ -75,7 +75,7 @@ for (let i = 0, k = 0; i <= 52; ++i) {
       totalSoberDays++;
       dayRect.setAttribute('fill', soberColor);
 
-      if (k > soberDays.length - currDate.getDate()) {
+      if (k >= soberDays.length - currDate.getDate()) {
         soberDaysThisMonth++;
       }
     } else {
