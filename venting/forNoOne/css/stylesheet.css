@@ -88,6 +88,7 @@ html, body {
 .noOneName {
   display:flex;
   align-items: center;
+  margin-right: 10px;
 }
 
 .profilePic {
