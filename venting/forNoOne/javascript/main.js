@@ -42,6 +42,7 @@ pic.addEventListener('click', function(event) {
 noOneNameText.addEventListener('click', function(event) {
   noOneNameText.style.display = 'none';
   noOneNameInputWrapper.style.display = 'inline';
+  noOneNameInput.value = noOneName;
   noOneNameInput.addEventListener('keyup', function(event) {
     if (event.key === 'Enter' && noOneNameInput.value.length) {
       setName();
