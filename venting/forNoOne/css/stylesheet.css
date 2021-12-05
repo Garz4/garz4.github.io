@@ -3,23 +3,53 @@ html, body {
   background-color: #18191a;
   color: #e4e6eb;
 }
-  
+
 .wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
 }
-  
+
+.party {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: right;
+}
+
 .chat {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 900px;
   background-color: #242526;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 12px 28px 0 var(--shadow-2),0 2px 4px 0 var(--shadow-1);
 }
-  
+
+.btn {
+  width: auto;
+  padding: 5px 16px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+  border: 1px solid;
+  border-radius: 6px;
+  transition: .2s cubic-bezier(.3,0,.5,1);
+  transition-property: all;
+}
+
+.btn-add {
+  text-align: center !important;
+  color: #fff;
+  background-color: #238636;
+  border-color: #2ea043;
+}
+
+.btn-add:hover {
+  background-color: #2ea043;
+}
+
 .chatMsgs {
   display: flex;
   flex-direction: column;
@@ -74,7 +104,7 @@ html, body {
   height:1px;
   background-color:#303030;
 }
-  
+
 .noOneNameText {
   margin-left: 10px;
 }
@@ -86,7 +116,7 @@ html, body {
   padding: 10px;
   color:white;
 }
-  
+
 .pic:hover .newPic {
   display:block;
   opacity: 0.2;
@@ -94,7 +124,7 @@ html, body {
   margin-left:1px;
   margin-top:-35px;
 }
-  
+
 .pic:hover {
   cursor:pointer;
 }

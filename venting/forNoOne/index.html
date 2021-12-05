@@ -9,8 +9,8 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="chat">
-        <div class="noOne">
+      <div class="party">
+        <div class="party" id="party">
           <span id="noOneName" class="noOneName">
             <div class="pic" id="pic">
               <img
@@ -38,12 +38,13 @@
                 type="text"
                 class="input"
                 id="noOneNameInput"
-                value="No One"
               />
             </span>
           </span>
         </div>
-        <div class="horizontalLine"></div>
+        <a class="btn btn-add" onclick="addNoOne()">+</a>
+      </div>
+      <div class="chat">
         <div class="chatMsgs" id="chat"></div>
         <input type="text" id="in" class="inputText" placeholder="Aa" />
       </div>
