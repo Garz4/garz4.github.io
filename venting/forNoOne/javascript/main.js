@@ -128,10 +128,10 @@ function addNoOne() {
   newNameInput.setAttribute('class', 'input');
   newNameInput.setAttribute('id', 'noOneNameInput' + partyMembers);
   newNameInput.setAttribute('value', newNoOneName);
-  
+
   newNoOneContainer.setAttribute('id', 'noOneName' + partyMembers);
   newNoOneContainer.setAttribute('class', 'noOneName');
-  
+
   newImgUpload.onchange = function (evt) {
     var tgt = evt.target || window.event.srcElement,
     files = tgt.files;
