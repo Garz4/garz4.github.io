@@ -15,6 +15,7 @@ html, body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: right;
+  margin-right: 10px;
 }
 
 .chat {
@@ -88,7 +89,6 @@ html, body {
 .noOneName {
   display:flex;
   align-items: center;
-  margin-right: 10px;
 }
 
 .profilePic {
