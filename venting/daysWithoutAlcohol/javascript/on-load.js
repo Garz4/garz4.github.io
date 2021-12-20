@@ -99,16 +99,17 @@ for (let i = 0, k = 0; i <= 52; ++i) {
         soberDaysThisMonth++;
       }
     } else {
-      currentStreak = 0;
       dayRect.addEventListener('mouseover', function(event) {
         let toBubble = '';
         let thisLeft = event.target.getBoundingClientRect().left;
         let thisTop = event.target.getBoundingClientRect().top;
 
         if (curr == '9') {
+          currentStreak = 0;
           toBubble = 'Wasted';
           bubble.style.left = (thisLeft - 30) + 'px';
         } else if (curr >= '0' && curr < '9') {
+          currentStreak = 0;
           toBubble = curr - 1 + ' can';
 
           if (curr - 1 != 1) {
@@ -118,9 +119,11 @@ for (let i = 0, k = 0; i <= 52; ++i) {
           toBubble += ' of beer';
           bubble.style.left = (thisLeft - 60) + 'px';
         } else if (curr == 'h') {
+          currentStreak++;
           toBubble = 'Hangover';
           bubble.style.left = (thisLeft - 50) + 'px';
         } else {
+          currentStreak = 0;
           toBubble = 'Beyond wasted';
           bubble.style.left = (thisLeft - 50) + 'px';
         }
