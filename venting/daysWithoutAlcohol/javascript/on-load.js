@@ -1,4 +1,4 @@
-const futureDate = 'Sat, 01 Jan 2022 12:00:00 UTC';
+const futureDate = 'Wed, 01 Jan 3000 12:00:00 UTC';
 const months = {
   0:'Jan', 1:'Feb', 2:'Mar', 3:'Apr', 4:'May', 5:'Jun', 6:'Jul',
   7:'Aug', 8:'Sep', 9:'Oct', 10:'Nov', 11:'Dic'
@@ -11,6 +11,13 @@ const descriptionInput = document.getElementById('description-input');
 const calendar = document.getElementById('calendar');
 const title = document.getElementById('title');
 const bubble = document.getElementById('bubble');
+const totalSoberDaysHTML = document.getElementById('total-sober-days-h1');
+const totalDaysHTML = document.getElementById('total-days-h3');
+const totalSoberMonthHTML = document.getElementById('total-sober-month-h1');
+const totalMonthHTML = document.getElementById('total-month-h3');
+const longestStreakHTML = document.getElementById('longest-streak');
+const currentStreakHTML = document.getElementById('current-streak');
+const startDateHTML = document.getElementById('start-date-h1');
 const svgNS = 'http://www.w3.org/2000/svg';
 const dayVectorSize = '10';
 const currDate = new Date();
@@ -29,9 +36,16 @@ var soberDays = getCookie('soberDays');
 var soberDaysThisMonth = 0;
 var startDate = getCookie('startDate');
 var curr;
+var longestStreak = getCookie('longestStreak');
+var currentStreak = 0;
 
 if (!soberDays.length) {
   setCookie('soberDays', getNewCalendar(), futureDate);
+}
+
+if (!longestStreak) {
+  setCookie('longestStreak', 0, futureDate);
+  longestStreak = 0;
 }
 
 if (!themeMode.length) {
@@ -74,11 +88,18 @@ for (let i = 0, k = 0; i <= 52; ++i) {
     } else if (soberDays[k] == '1') { 
       totalSoberDays++;
       dayRect.setAttribute('fill', soberColor);
+      currentStreak++;
+
+      if (currentStreak > longestStreak) {
+        longestStreak = currentStreak;
+        setCookie('longestStreak', longestStreak, futureDate);
+      }
 
       if (k >= soberDays.length - currDate.getDate()) {
         soberDaysThisMonth++;
       }
     } else {
+      currentStreak = 0;
       dayRect.addEventListener('mouseover', function(event) {
         let toBubble = '';
         let thisLeft = event.target.getBoundingClientRect().left;
@@ -133,7 +154,7 @@ for (let i = 0, k = 0; i <= 52; ++i) {
         dayRect.setAttribute('fill', 'black');
       }
     }
-    
+
     k++;
     if (totalSoberDays > 0) {
       totalDays++;
@@ -155,9 +176,13 @@ for (let i = 0, k = 0; i <= 52; ++i) {
 if (totalSoberDays == 0) {
   title.innerHTML = 'Not started yet.';
 } else {
-  title.innerHTML = 'Started on ' + startDate + ', ' + totalSoberDays +
-    ' total sober days out of ' + totalDays + ' days. ' + soberDaysThisMonth +
-    ' out of ' + currDate.getDate() + ' this month.';
+  startDateHTML.innerHTML = startDate;
+  totalSoberDaysHTML.innerHTML = totalSoberDays;
+  totalDaysHTML.innerHTML = '/' + totalDays;
+  totalSoberMonthHTML.innerHTML = soberDaysThisMonth;
+  totalMonthHTML.innerHTML = '/' + currDate.getDate();
+  longestStreakHTML.innerHTML = longestStreak;
+  currentStreakHTML.innerHTML = currentStreak;
 }
 
 curr = getCookie('username');
