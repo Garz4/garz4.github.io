@@ -28,6 +28,11 @@
   height: 87.5px;
 }
 
+.out-of {
+  color: gray;
+  align-self: center;
+}
+
 .btn {
   position: relative;
   display: inline-block;
