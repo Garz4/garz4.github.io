@@ -105,11 +105,9 @@ for (let i = 0, k = 0; i <= 52; ++i) {
         let thisTop = event.target.getBoundingClientRect().top;
 
         if (curr == '9') {
-          currentStreak = 0;
           toBubble = 'Wasted';
           bubble.style.left = (thisLeft - 30) + 'px';
         } else if (curr >= '0' && curr < '9') {
-          currentStreak = 0;
           toBubble = curr - 1 + ' can';
 
           if (curr - 1 != 1) {
@@ -119,11 +117,9 @@ for (let i = 0, k = 0; i <= 52; ++i) {
           toBubble += ' of beer';
           bubble.style.left = (thisLeft - 60) + 'px';
         } else if (curr == 'h') {
-          currentStreak++;
           toBubble = 'Hangover';
           bubble.style.left = (thisLeft - 50) + 'px';
         } else {
-          currentStreak = 0;
           toBubble = 'Beyond wasted';
           bubble.style.left = (thisLeft - 50) + 'px';
         }
@@ -140,20 +136,26 @@ for (let i = 0, k = 0; i <= 52; ++i) {
       }, false);
 
       if (soberDays[k] == '2' || soberDays[k] == '3') {
+        currentStreak = 0;
         dayRect.setAttribute('fill', lowDrunkColor);
       } else if (soberDays[k] == '4' || soberDays[k] == '5') {
+        currentStreak = 0;
         dayRect.setAttribute('fill', midDrunkColor);
       } else if (soberDays[k] == '6' || soberDays[k] == '7') {
+        currentStreak = 0;
         dayRect.setAttribute('fill', highDrunkColor);
       } else if (soberDays[k] == '8' || soberDays[k] == '9') {
+        currentStreak = 0;
         dayRect.setAttribute('fill', wastedColor);
       } else if (soberDays[k] == 'h') {
+        currentStreak++;
         dayRect.setAttribute('fill', hangoverColor);
 
         if (k > soberDays.length - currDate.getDate()) {
           soberDaysThisMonth++;
         }
       } else {
+        currentStreak = 0;
         dayRect.setAttribute('fill', 'black');
       }
     }
