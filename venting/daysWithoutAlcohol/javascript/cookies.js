@@ -6,19 +6,20 @@
  *   - username
  */
 
-function getCookie(cname) {
-  let name = cname + '=';
-  let ca = document.cookie.split(';');
+function getCookie(cookieName) {
+  let name = cookieName + '=';
+  let cookieArray = document.cookie.split(';');
 
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i];
+  for (let i = 0; i < cookieArray.length; i++) {
+    let currentCookie = cookieArray[i];
 
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
+    // Interesting way of doing this.
+    while (currentCookie.charAt(0) === ' ') {
+      currentCookie = currentCookie.substring(1);
     }
 
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
+    if (currentCookie.indexOf(name) === 0) {
+      return currentCookie.substring(name.length, currentCookie.length);
     }
   }
 

@@ -59,6 +59,7 @@ if (!themeMode.length) {
 
 if (startDate.length) {
   startDate = startDate.split('-');
+
   if (startDate.length == 3) {
     startDate = startDate[2] + ' ' + months[startDate[1]] + ' ' + startDate[0];
   }
@@ -68,7 +69,7 @@ if (currDay >= soberDays.length - 364) {
   soberDays = soberDays + '0';
   setCookie('soberDays', soberDays, futureDate);
 } else if (soberDays.length == 371 && currDay == 0) {
-  soberDays = soberDays.substr(7) + '0';
+  soberDays = soberDays.substring(7) + '0';
   setCookie('soberDays', soberDays, futureDate);
 }
 
@@ -161,6 +162,7 @@ for (let i = 0, k = 0; i <= 52; ++i) {
     }
 
     k++;
+
     if (totalSoberDays > 0) {
       totalDays++;
     }
