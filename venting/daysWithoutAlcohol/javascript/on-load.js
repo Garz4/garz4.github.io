@@ -68,7 +68,7 @@ if (currDay >= soberDays.length - 364) {
   soberDays = soberDays + '0';
   setCookie('soberDays', soberDays, futureDate);
 } else if (soberDays.length == 371 && currDay == 0) {
-  soberDays = soberDays.substr(7) + '0';
+  soberDays = soberDays.substring(7) + '0';
   setCookie('soberDays', soberDays, futureDate);
 }
 

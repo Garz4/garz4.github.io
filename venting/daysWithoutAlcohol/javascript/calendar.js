@@ -24,7 +24,7 @@ function todayDrunk() {
 
   setCookie(
     'soberDays',
-    soberDays.substr(0, soberDays.length - 1) + quantity,
+    soberDays.substring(0, soberDays.length - 1) + quantity,
     futureDate
   );
 
@@ -43,7 +43,7 @@ function todaySober() {
 
   setCookie(
     'soberDays',
-    soberDays.substr(0, soberDays.length - 1) + '1',
+    soberDays.substring(0, soberDays.length - 1) + '1',
     futureDate
   );
 
@@ -53,7 +53,7 @@ function todaySober() {
 function todayHangover() {
   setCookie(
     'soberDays',
-    soberDays.substr(0, soberDays.length - 1) + 'h',
+    soberDays.substring(0, soberDays.length - 1) + 'h',
     futureDate
   );
 
