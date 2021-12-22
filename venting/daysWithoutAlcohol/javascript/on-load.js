@@ -161,6 +161,7 @@ for (let i = 0, k = 0; i <= 52; ++i) {
     }
 
     k++;
+
     if (totalSoberDays > 0) {
       totalDays++;
     }
