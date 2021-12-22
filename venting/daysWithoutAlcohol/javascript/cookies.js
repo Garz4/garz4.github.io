@@ -6,7 +6,7 @@
  *   - username
  */
 
- function getCookie(cookieName) {
+function getCookie(cookieName) {
   let name = cookieName + '=';
   let cookieArray = document.cookie.split(';');
 
