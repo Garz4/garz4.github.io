@@ -127,3 +127,9 @@
   position: absolute;
   z-index: 99999;
 }
+
+.align-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
