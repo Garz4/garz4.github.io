@@ -96,7 +96,7 @@ html, body {
 }
 
 .newPic {
-  display:none;
+  display: none;
 }
 
 .horizontalLine {
@@ -112,14 +112,14 @@ html, body {
 
 .inputText {
   background-color: #3a3a3a;
-  border:0px;
+  border: 0px;
   border-radius: 50px;
   padding: 10px;
-  color:white;
+  color: white;
 }
 
 .pic:hover .newPic {
-  display:block;
+  display: block;
   opacity: 0.2;
   position:fixed;
   margin-left:1px;
