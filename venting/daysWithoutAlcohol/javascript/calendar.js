@@ -32,7 +32,7 @@ function todayDrunk() {
 }
 
 function todaySober() {
-  if (totalSoberDays == 0) {
+  if (totalSoberDays === 0) {
     setCookie(
       'startDate',
       currDate.getFullYear() + '-' + currDate.getMonth() + '-' +
