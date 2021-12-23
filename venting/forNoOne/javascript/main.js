@@ -79,7 +79,7 @@ function sendMsg() {
 }
 
 function setName() {
-  if (noOneNameInput.value.length != 0) {
+  if (noOneNameInput.value.length !== 0) {
     noOneName = noOneNameInput.value;
   }
 
@@ -161,7 +161,7 @@ function addNoOne() {
 
     newNameInput.addEventListener('keyup', function(event) {
       if (event.key === 'Enter' && newNameInput.value.length) {
-        if (newNameInput.value.length != 0) {
+        if (newNameInput.value.length !== 0) {
           newNameText.innerHTML = newNameInput.value;
         }
 
