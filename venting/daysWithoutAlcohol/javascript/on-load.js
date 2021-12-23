@@ -60,7 +60,7 @@ if (!themeMode.length) {
 if (startDate.length) {
   startDate = startDate.split('-');
 
-  if (startDate.length == 3) {
+  if (startDate.length === 3) {
     startDate = startDate[2] + ' ' + months[startDate[1]] + ' ' + startDate[0];
   }
 }
@@ -68,7 +68,7 @@ if (startDate.length) {
 if (currDay >= soberDays.length - 364) {
   soberDays = soberDays + '0';
   setCookie('soberDays', soberDays, futureDate);
-} else if (soberDays.length == 371 && currDay == 0) {
+} else if (soberDays.length === 371 && currDay === 0) {
   soberDays = soberDays.substring(7) + '0';
   setCookie('soberDays', soberDays, futureDate);
 }
@@ -84,9 +84,9 @@ for (let i = 0, k = 0; i <= 52; ++i) {
     dayRect.setAttribute('height', dayVectorSize);
     dayRect.setAttribute('rx', '2px');
 
-    if (soberDays[k] == '0') {
+    if (soberDays[k] === '0') {
       dayRect.setAttribute('fill', upcomingDayColor);
-    } else if (soberDays[k] == '1') { 
+    } else if (soberDays[k] === '1') {
       totalSoberDays++;
       dayRect.setAttribute('fill', soberColor);
       currentStreak++;
@@ -105,7 +105,7 @@ for (let i = 0, k = 0; i <= 52; ++i) {
         let thisLeft = event.target.getBoundingClientRect().left;
         let thisTop = event.target.getBoundingClientRect().top;
 
-        if (curr == '9') {
+        if (curr === '9') {
           toBubble = 'Wasted';
           bubble.style.left = (thisLeft - 30) + 'px';
         } else if (curr >= '0' && curr < '9') {
@@ -117,7 +117,7 @@ for (let i = 0, k = 0; i <= 52; ++i) {
 
           toBubble += ' of beer';
           bubble.style.left = (thisLeft - 60) + 'px';
-        } else if (curr == 'h') {
+        } else if (curr === 'h') {
           toBubble = 'Hangover';
           bubble.style.left = (thisLeft - 50) + 'px';
         } else {
@@ -136,19 +136,19 @@ for (let i = 0, k = 0; i <= 52; ++i) {
         bubble.setAttribute('hidden', 'hidden');
       }, false);
 
-      if (soberDays[k] == '2' || soberDays[k] == '3') {
+      if (soberDays[k] === '2' || soberDays[k] === '3') {
         currentStreak = 0;
         dayRect.setAttribute('fill', lowDrunkColor);
-      } else if (soberDays[k] == '4' || soberDays[k] == '5') {
+      } else if (soberDays[k] === '4' || soberDays[k] === '5') {
         currentStreak = 0;
         dayRect.setAttribute('fill', midDrunkColor);
-      } else if (soberDays[k] == '6' || soberDays[k] == '7') {
+      } else if (soberDays[k] === '6' || soberDays[k] === '7') {
         currentStreak = 0;
         dayRect.setAttribute('fill', highDrunkColor);
-      } else if (soberDays[k] == '8' || soberDays[k] == '9') {
+      } else if (soberDays[k] === '8' || soberDays[k] === '9') {
         currentStreak = 0;
         dayRect.setAttribute('fill', wastedColor);
-      } else if (soberDays[k] == 'h') {
+      } else if (soberDays[k] === 'h') {
         currentStreak++;
         dayRect.setAttribute('fill', hangoverColor);
 
@@ -180,7 +180,7 @@ for (let i = 0, k = 0; i <= 52; ++i) {
   calendar.appendChild(newWeekContainer);
 }
 
-if (totalSoberDays == 0) {
+if (totalSoberDays === 0) {
   title.innerHTML = 'Not started yet.';
 } else {
   startDateHTML.innerHTML = startDate;
