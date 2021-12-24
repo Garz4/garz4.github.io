@@ -7,7 +7,7 @@ html, body {
 .wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content:center;
 }
 
 .party {
@@ -36,7 +36,7 @@ html, body {
   cursor: pointer;
   border: 1px solid;
   border-radius: 6px;
-  transition: .2s cubic-bezier(.3,0,.5,1);
+  transition: .2s cubic-bezier(.3, 0,.5,1);
   transition-property: all;
 }
 
