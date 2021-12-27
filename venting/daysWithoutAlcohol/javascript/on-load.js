@@ -12,8 +12,10 @@ const calendar = document.getElementById('calendar');
 const title = document.getElementById('title');
 const bubble = document.getElementById('bubble');
 const totalSoberDaysHTML = document.getElementById('total-sober-days-h1');
+const percentageSoberDaysHTML = document.getElementById('percentage-total-h1');
 const totalDaysHTML = document.getElementById('total-days-h3');
 const totalSoberMonthHTML = document.getElementById('total-sober-month-h1');
+const percentageSoberMonthHTML = document.getElementById('percentage-month-h1');
 const totalMonthHTML = document.getElementById('total-month-h3');
 const longestStreakHTML = document.getElementById('longest-streak');
 const currentStreakHTML = document.getElementById('current-streak');
@@ -183,6 +185,9 @@ for (let i = 0, k = 0; i <= 52; ++i) {
 if (totalSoberDays === 0) {
   title.innerHTML = 'Not started yet.';
 } else {
+  let totalPercentage;
+  let monthPercentage;
+
   startDateHTML.innerHTML = startDate;
   totalSoberDaysHTML.innerHTML = totalSoberDays;
   totalDaysHTML.innerHTML = '/' + totalDays;
@@ -190,6 +195,10 @@ if (totalSoberDays === 0) {
   totalMonthHTML.innerHTML = '/' + currDate.getDate();
   longestStreakHTML.innerHTML = longestStreak;
   currentStreakHTML.innerHTML = currentStreak;
+  totalPercentage = ((totalSoberDays * 100) / totalDays).toFixed(2);
+  monthPercentage = ((soberDaysThisMonth * 100) / currDate.getDate()).toFixed(2);
+  percentageSoberDaysHTML.innerHTML = totalPercentage + '%';
+  percentageSoberMonthHTML.innerHTML = monthPercentage + '%';
 }
 
 curr = getCookie('username');
