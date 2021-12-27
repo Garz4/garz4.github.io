@@ -187,16 +187,17 @@ if (totalSoberDays === 0) {
 } else {
   let totalPercentage;
   let monthPercentage;
+  let today = currDate.getDate();
 
   startDateHTML.innerHTML = startDate;
   totalSoberDaysHTML.innerHTML = totalSoberDays;
   totalDaysHTML.innerHTML = '/' + totalDays;
   totalSoberMonthHTML.innerHTML = soberDaysThisMonth;
-  totalMonthHTML.innerHTML = '/' + currDate.getDate();
+  totalMonthHTML.innerHTML = '/' + today;
   longestStreakHTML.innerHTML = longestStreak;
   currentStreakHTML.innerHTML = currentStreak;
   totalPercentage = ((totalSoberDays * 100) / totalDays).toFixed(2);
-  monthPercentage = ((soberDaysThisMonth * 100) / currDate.getDate()).toFixed(2);
+  monthPercentage = ((soberDaysThisMonth * 100) / today).toFixed(2);
   percentageSoberDaysHTML.innerHTML = totalPercentage + '%';
   percentageSoberMonthHTML.innerHTML = monthPercentage + '%';
 }
