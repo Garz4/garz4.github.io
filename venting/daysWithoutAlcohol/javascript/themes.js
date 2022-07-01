@@ -31,3 +31,4 @@ function updateTheme() {
 
   refresh();
 }
+

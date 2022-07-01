@@ -11,3 +11,4 @@ You can try it [here](https://garz4.github.io/venting/daysWithoutAlcohol).
 ## Credits
 
 Logo [designed by Freepik](http://www.freepik.com).
+
