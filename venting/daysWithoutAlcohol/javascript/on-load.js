@@ -18,6 +18,7 @@ const percentageSoberMonthHTML = document.getElementById('percentage-month-h1');
 const totalMonthHTML = document.getElementById('total-month-h3');
 const longestStreakHTML = document.getElementById('longest-streak');
 const currentStreakHTML = document.getElementById('current-streak');
+const previousStreakHTML = document.getElementById('previous-streak');
 const startDateHTML = document.getElementById('start-date-h1');
 const svgNS = 'http://www.w3.org/2000/svg';
 const dayVectorSize = '10';
@@ -39,6 +40,7 @@ var startDate = getCookie('startDate');
 var curr;
 var longestStreak = getCookie('longestStreak');
 var currentStreak = 0;
+var previousStreak = 0;
 
 if (!soberDays.length) {
   setCookie('soberDays', getNewCalendar(), futureDate);
@@ -138,25 +140,30 @@ for (let i = 0, k = 0; i <= 52; ++i) {
       }, false);
 
       if (soberDays[k] === '2' || soberDays[k] === '3') {
+        previousStreak = currentStreak;
         currentStreak = 0;
         dayRect.setAttribute('fill', lowDrunkColor);
       } else if (soberDays[k] === '4' || soberDays[k] === '5') {
+        previousStreak = currentStreak;
         currentStreak = 0;
         dayRect.setAttribute('fill', midDrunkColor);
       } else if (soberDays[k] === '6' || soberDays[k] === '7') {
+        previousStreak = currentStreak;
         currentStreak = 0;
         dayRect.setAttribute('fill', highDrunkColor);
       } else if (soberDays[k] === '8' || soberDays[k] === '9') {
+        previousStreak = currentStreak;
         currentStreak = 0;
         dayRect.setAttribute('fill', wastedColor);
       } else if (soberDays[k] === 'h') {
         currentStreak++;
         dayRect.setAttribute('fill', hangoverColor);
-
+        
         if (k > soberDays.length - currDate.getDate()) {
           soberDaysThisMonth++;
         }
       } else {
+        previousStreak = currentStreak;
         currentStreak = 0;
         dayRect.setAttribute('fill', 'black');
       }
@@ -192,6 +199,7 @@ totalSoberMonthHTML.innerHTML = soberDaysThisMonth;
 totalMonthHTML.innerHTML = '/' + today;
 longestStreakHTML.innerHTML = longestStreak;
 currentStreakHTML.innerHTML = currentStreak;
+previousStreakHTML.innerHTML = previousStreak;
 totalPercentage = ((totalSoberDays * 100) / totalDays).toFixed(2);
 monthPercentage = ((soberDaysThisMonth * 100) / today).toFixed(2);
 percentageSoberDaysHTML.innerHTML = totalPercentage + '%';
