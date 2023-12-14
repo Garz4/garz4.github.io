@@ -140,19 +140,19 @@ for (let i = 0, k = 0; i <= 52; ++i) {
       }, false);
 
       if (soberDays[k] === '2' || soberDays[k] === '3') {
-        previousStreak = currentStreak;
+        previousStreak = currentStreak != 0 ? currentStreak : previousStreak;
         currentStreak = 0;
         dayRect.setAttribute('fill', lowDrunkColor);
       } else if (soberDays[k] === '4' || soberDays[k] === '5') {
-        previousStreak = currentStreak;
+        previousStreak = currentStreak != 0 ? currentStreak : previousStreak;
         currentStreak = 0;
         dayRect.setAttribute('fill', midDrunkColor);
       } else if (soberDays[k] === '6' || soberDays[k] === '7') {
-        previousStreak = currentStreak;
+        previousStreak = currentStreak != 0 ? currentStreak : previousStreak;
         currentStreak = 0;
         dayRect.setAttribute('fill', highDrunkColor);
       } else if (soberDays[k] === '8' || soberDays[k] === '9') {
-        previousStreak = currentStreak;
+        previousStreak = currentStreak != 0 ? currentStreak : previousStreak;
         currentStreak = 0;
         dayRect.setAttribute('fill', wastedColor);
       } else if (soberDays[k] === 'h') {
@@ -163,7 +163,7 @@ for (let i = 0, k = 0; i <= 52; ++i) {
           soberDaysThisMonth++;
         }
       } else {
-        previousStreak = currentStreak;
+        previousStreak = currentStreak != 0 ? currentStreak : previousStreak;
         currentStreak = 0;
         dayRect.setAttribute('fill', 'black');
       }
